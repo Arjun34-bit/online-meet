@@ -1,3 +1,5 @@
+import "./index.css";
+
 import io from "socket.io-client";
 import * as mediasoupClient from "mediasoup-client";
 
@@ -283,9 +285,12 @@ const connectRecvTransport = async (
 
       const newElem = document.createElement("div");
       newElem.setAttribute("id", `td-${remoteProducerId}`);
-      newElem.setAttribute("class", "remoteVideo");
-      newElem.innerHTML =
-        '<video id="' + remoteProducerId + '" autoplay class="video"></video>';
+      newElem.setAttribute("class", "remote-video-box");
+
+      newElem.innerHTML = `
+  <video id="${remoteProducerId}" autoplay playsinline></video>
+  <button onclick="endCall('${remoteProducerId}')">End</button>
+`;
       videoContainer.appendChild(newElem);
 
       const { track } = consumer;
