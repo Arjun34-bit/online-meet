@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "watch": "watchify public/index.js -o public/bundle.js -v -t [ babelify --extensions .js ]",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "author": "arjun",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "httpolyglot": "^0.1.2",
+    "mediasoup": "^3.16.0",
+    "mediasoup-client": "^3.11.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "vite": "^6.3.5",
+    "watchify": "^4.0.0"
+  }
+}
